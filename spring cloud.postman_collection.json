@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "9be70be5-39d6-468e-939e-39cd0ce78a37",
+		"name": "spring cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userService create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 12001,\n    \"username\": \"lzn\",\n    \"password\":\"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8201/user/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8201",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userService select",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8201/user/12001",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8201",
+					"path": [
+						"user",
+						"12001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ribbion service select",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8301/user/12001",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8301",
+					"path": [
+						"user",
+						"12001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hystrix testfaback",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8401/user/testFallback/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8401",
+					"path": [
+						"user",
+						"testFallback",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hystrix exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8401/user/testException/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8401",
+					"path": [
+						"user",
+						"testException",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hystrix cache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8401/user/testCache/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8401",
+					"path": [
+						"user",
+						"testCache",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hystrix cache remove",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8401/user/testRemoveCache/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8401",
+					"path": [
+						"user",
+						"testRemoveCache",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hystrix callsper",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8401/user/testCollapser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8401",
+					"path": [
+						"user",
+						"testCollapser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hystrix command",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8401/user/testCommand/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8401",
+					"path": [
+						"user",
+						"testCommand",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "open feign service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8701/user/12001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8701",
+					"path": [
+						"user",
+						"12001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "zuul route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8801/user-service/user/12001",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8801",
+					"path": [
+						"user-service",
+						"user",
+						"12001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
